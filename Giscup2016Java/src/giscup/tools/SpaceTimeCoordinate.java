@@ -2,17 +2,10 @@ package giscup.tools;
 
 public class SpaceTimeCoordinate {
 		
-	static final int xMax;
-	static final int yMax;
-	static final int tMax;
-	
-	static {
-		BoundaryCalculator bc = BoundaryCalculator.getInstance();
-		xMax = bc.xMax;
-		yMax = bc.yMax;
-		tMax = bc.tMax;
-	}
-	
+	public static int xSize;
+	public static int ySize;
+	public static int tSize;
+			
 	public int x;
 	public int y;
 	public int t;
@@ -44,7 +37,7 @@ public class SpaceTimeCoordinate {
 	
 	@Override
 	public int hashCode() {
-		return t * yMax * xMax + y * xMax + x;
+		return t * ySize * xSize + y * xSize + x;
 	}
 	
 	@Override
