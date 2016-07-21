@@ -1,0 +1,8 @@
+<ivy-module version="2.0">
+    <info organisation="org.apache" module="giscup-ivy"/>
+    <dependencies>
+		<dependency org="com.koloboke" name="koloboke-api-jdk8" rev="1.0.0"/>
+		<dependency org="com.koloboke" name="koloboke-impl-jdk8" rev="1.0.0"/>
+    </dependencies>
+</ivy-module>
+
