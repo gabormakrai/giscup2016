@@ -27,7 +27,7 @@ public class Solution2Mapper extends Mapper<LongWritable, Text, IntWritable, Tex
 		}
 	}
 	
-	private static final BoundaryCalculator bc = BoundaryCalculator.getInstance();
+	private static final BoundaryCalculator bc = BoundaryCalculator.giscupBoundaryCalculator;
 	
 	private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		
@@ -44,12 +44,14 @@ public class Solution2Mapper extends Mapper<LongWritable, Text, IntWritable, Tex
 		Text outputText = new Text();
 		
 		IntWritable outputInteger = new IntWritable();
+		
+		int[] partitions = new int[2];
 				
 		for (Entry<SpaceTimeCoordinate, AtomicInteger> entry : map.entrySet()) {
 			
 			SpaceTimeCoordinate stc = entry.getKey();
 			
-			int[] partitions = bc.getTimePartition(stc.t);
+			bc.getTimePartition(stc.t, partitions);
 			
 			outputText.set("" + stc.x + "," + stc.y + "," + stc.t + "," + entry.getValue().intValue());
 			
