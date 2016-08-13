@@ -1,6 +1,7 @@
 package giscup.tools
 
-class SpaceTimeCoordinateValue(val x: Int, val y: Int, val t: Int, val v: Int) extends Ordered[SpaceTimeCoordinateValue] {
+@SerialVersionUID(1L)
+class SpaceTimeCoordinateValue(val x: Int, val y: Int, val t: Int, val v: Int) extends Ordered[SpaceTimeCoordinateValue] with Serializable {
   override def compare(that: SpaceTimeCoordinateValue): Int = {
     that.v - this.v
   }
