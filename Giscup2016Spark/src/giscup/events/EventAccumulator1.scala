@@ -3,7 +3,8 @@ package giscup.events
 import giscup.tools.SpaceTimeCoordinate
 import scala.collection.mutable.ListBuffer
 
-class EventAccumulator1(bufferSize: Int) {
+@SerialVersionUID(1L)
+class EventAccumulator1(bufferSize: Int) extends Serializable {
   
   val array: Array[Int] = {
     Array.fill(bufferSize){ 0 }
