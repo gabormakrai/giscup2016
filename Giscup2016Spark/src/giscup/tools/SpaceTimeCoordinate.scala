@@ -6,7 +6,7 @@ object SpaceTimeCoordinate {
   var ySize: Int = 0
   var tSize: Int = 0
   
-  def hashCode(x: Int, y: Int, t: Int): Int = {
+  def hash(x: Int, y: Int, t: Int): Int = {
     t * ySize * xSize + y * xSize + x
   }
   
@@ -32,7 +32,7 @@ object SpaceTimeCoordinate {
 class SpaceTimeCoordinate(val x: Int, val y: Int, val t: Int) extends Serializable {
     
   override def hashCode(): Int = {
-    SpaceTimeCoordinate.hashCode(x, y, t)
+    SpaceTimeCoordinate.hash(x, y, t)
   }
   
   override def equals(that: Any): Boolean = {
