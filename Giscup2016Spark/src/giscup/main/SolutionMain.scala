@@ -14,6 +14,8 @@ object SolutionMain {
   def main(args: Array[String]) = {
     
     val conf = new SparkConf().setAppName("Giscup G* calculation app")
+    conf.set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
+    conf.registerKryoClasses(Array(classOf[SpaceTimeCoordinate]))
     
     val sc = new SparkContext(conf)
     
