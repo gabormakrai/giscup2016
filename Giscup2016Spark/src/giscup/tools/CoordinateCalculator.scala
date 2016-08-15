@@ -2,6 +2,7 @@ package giscup.tools
 
 import java.text.SimpleDateFormat
 
+@SerialVersionUID(1L)
 class CoordinateCalculator(
     val long1: Double, 
     val long2: Double, 
@@ -11,7 +12,7 @@ class CoordinateCalculator(
     val date1: String, 
     val date2: String, 
     val timeParameterInDays: Int, 
-    val timePartitions: Int) {
+    val timePartitions: Int) extends Serializable {
     
   val long0: Double = {
     var x = (long1 / degreeParameter).toLong.toDouble
