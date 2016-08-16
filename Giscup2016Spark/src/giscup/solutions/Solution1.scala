@@ -67,11 +67,6 @@ class Solution1 extends Solution {
     
     // add events from the spark job
     c.foreach(t => finalEvents.event(t._1, t._2))
-
-    // serialize
-    val oos = new ObjectOutputStream(new GzipOutputStream(new FileOutputStream("/home/makrai/data/finalEvents2.gz")))
-    oos.writeObject(finalEvents)
-    oos.close()
     
     // create the top50 storage
     val topStorage = new Top50Storage1()
