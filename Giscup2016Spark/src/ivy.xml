@@ -1,6 +1,6 @@
 <ivy-module version="2.0">
     <info organisation="org.apache" module="giscup-ivy"/>
     <dependencies>
-		<dependency org="org.apache.spark" name="spark-core_2.10" rev="1.5.2"/>
+		<dependency org="org.apache.spark" name="spark-core_2.10" rev="1.6.0"/>
     </dependencies>
 </ivy-module>
