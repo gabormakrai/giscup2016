@@ -93,8 +93,11 @@ class Solution1 extends Solution {
     sc.parallelize(top,1).map(stcv => {
       val zScore = GetisOrdStatistic.calculateZScore(stcv.v, sum, sum2, n)
       val pValue = GetisOrdStatistic.calculatePValue(zScore)
+      val x = stcv.x + coordinateCalculator.longitudeOffset
+      val y = stcv.y + coordinateCalculator.latitudeOffset
+      val t = stcv.t + coordinateCalculator.timeOffset
       
-      "" + stcv.x + "," + stcv.y + "," + stcv.t + "," + zScore + "," + pValue
+      "" + x + "," + y + "," + t + "," + zScore + "," + pValue
     }).saveAsTextFile(outputFile)
     
   }
