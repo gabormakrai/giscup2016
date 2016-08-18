@@ -2,11 +2,18 @@ package giscup.parser
 
 import java.text.SimpleDateFormat
 import giscup.tools.CoordinateCalculator
-
+/**
+ * 
+ * LineParser scala implementation
+ * 
+ * It implements the LineParser trait
+ * 
+ */
 class LineParser1(cc: CoordinateCalculator) extends LineParser{
   
   val sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
   
+  // function that checks that a given String is a Double
   def isDouble(x: String): Boolean = {
     try {
       val y = x.toDouble
@@ -15,7 +22,8 @@ class LineParser1(cc: CoordinateCalculator) extends LineParser{
       case e: Throwable => false
     }
   }
-  
+
+  // process a line and determines XYT parameters if the line contains a valid event
   def parseLine(xyt: Array[Int], line: String): Boolean = {
     
     val splittedLine = line.split("\\,")
