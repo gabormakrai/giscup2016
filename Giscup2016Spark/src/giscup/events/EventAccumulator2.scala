@@ -3,6 +3,16 @@ package giscup.events
 import giscup.tools.SpaceTimeCoordinate
 import scala.collection.mutable.ListBuffer
 
+/**
+ * 
+ * EventAccumulator class
+ * 
+ * Counts all the events happened by calling the event function
+ * It creates a huge array and increases the array values based on the event X,Y,T parameters
+ * 
+ * Its event function receives an Int which is basically the hash value for the event's XYT parameter
+ * 
+ */
 @SerialVersionUID(1L)
 class EventAccumulator2(bufferSize: Int) extends Serializable {
   
