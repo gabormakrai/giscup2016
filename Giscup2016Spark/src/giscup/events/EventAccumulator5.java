@@ -3,6 +3,13 @@ package giscup.events;
 import giscup.tools.SpaceTimeCoordinate;
 import giscup.top50.Top50Storage2;
 
+/**
+ * 
+ * EventAccumulator class
+ * 
+ * Improved version of the EventAccumulator4 class where the top50 calculation is multi-threaded
+ *
+ */
 public class EventAccumulator5 {
 	
 	final int[] array;
