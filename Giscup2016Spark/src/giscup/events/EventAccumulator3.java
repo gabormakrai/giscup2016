@@ -2,7 +2,14 @@ package giscup.events;
 
 import java.util.Arrays;
 import java.util.LinkedList;
-
+/**
+ * 
+ * EventAccumulator class
+ * 
+ * Java version of EventAccumulator2 scala class and also contains several smaller arrays
+ * and allocates the small ones only if they needed 
+ *
+ */
 public class EventAccumulator3 {
 	
 	private final int[][] arrays;
