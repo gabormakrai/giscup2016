@@ -1,7 +1,14 @@
 package giscup.tools
 
 import java.text.SimpleDateFormat
-
+/**
+ * 
+ * CoordinateCalculator class
+ * 
+ * It assigns x,y,t values for given longitude,latitude,time values
+ * Also it can converts back xyt values
+ * 
+ */
 @SerialVersionUID(1L)
 class CoordinateCalculator(
     val long1: Double, 
