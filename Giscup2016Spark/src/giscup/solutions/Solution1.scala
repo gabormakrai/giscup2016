@@ -16,10 +16,18 @@ import giscup.top50.Top50Storage1
 import java.io.ObjectOutputStream
 import java.io.FileOutputStream
 import org.apache.hadoop.io.compress.GzipCodec.GzipOutputStream
-
+/**
+ * 
+ * Solution1
+ * 
+ * This solution uses the classes which offer the most readable code
+ * These classes (LineParser1, Top50Storage1, EventAccumulator1)
+ * are designed for understanding the solution concept
+ * 
+ */
 class Solution1 extends Solution {
   
-  override def run(inputFiles: String, outputFile: String, degreeParameter: Double, timeParameterInDays: Int, sc: SparkContext) {
+  override def run(inputFiles: String, outputFile: String, degreeParameter: Double, timeParameterInDays: Double, sc: SparkContext) {
     
     // open the file for parsing
     val a = sc.textFile(inputFiles)
