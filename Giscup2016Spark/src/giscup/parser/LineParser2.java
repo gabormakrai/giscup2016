@@ -19,7 +19,7 @@ public class LineParser2 implements LineParser{
 	
 	public LineParser2(CoordinateCalculator cc) {
 		this.cc = cc;
-		this.sdf = new SimpleDateFormat("yyyyMMdd");
+		this.sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	}
 	
 	// function that checks that a given String is a Double
