@@ -1,7 +1,16 @@
 package giscup.top50;
 
 import giscup.tools.SpaceTimeCoordinateValue;
-
+/**
+ * 
+ * Top50Storage class
+ * 
+ * It can store the top50 SpaceTimeCoordinateValue for the final result
+ * Implemented in Java to maximise performance
+ * It maintains an 4 arrays for the top50 events x,y,t,v values and implements
+ * a binary search insertion sorting algorithm
+ * 
+ */
 public class Top50Storage2 {
 	
 	private final int[] xArray = new int[50];
