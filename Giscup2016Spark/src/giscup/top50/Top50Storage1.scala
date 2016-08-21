@@ -2,7 +2,15 @@ package giscup.top50
 
 import scala.util.Sorting
 import giscup.tools.SpaceTimeCoordinateValue
-
+/**
+ * 
+ * Top50Storage class
+ * 
+ * It can store the top50 SpaceTimeCoordinateValue for the final result
+ * It massively uses the Sorting.quickSort function to always keep the best 50 candidate
+ * in the top51 array
+ * 
+ */
 class Top50Storage1 {
   
   val top51: Array[SpaceTimeCoordinateValue] = new Array(51)
