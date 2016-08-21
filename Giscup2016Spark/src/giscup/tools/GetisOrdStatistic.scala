@@ -1,7 +1,18 @@
 package giscup.tools
-
+/**
+ * 
+ * GetisOrdStatistic class for the calculation of G* score
+ * 
+ */
 object GetisOrdStatistic {
   
+  /**
+   * 
+   * Function which converts the events frequency into a zScore
+   * 
+   * This is explained in the companion pdf document
+   * 
+   */
   def calculateZScore(value: Int, sum: Long, sum2: Long, n: Int): Double = {
     val X: Double = sum.toDouble / n.toDouble
     val S: Double = Math.sqrt(sum2.toDouble / n.toDouble - X * X)
