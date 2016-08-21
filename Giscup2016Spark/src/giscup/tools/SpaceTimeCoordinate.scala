@@ -1,15 +1,21 @@
 package giscup.tools
-
+/**
+ * 
+ * SpaceTimeCoordinate static functions (comapnion object)
+ * 
+ */
 object SpaceTimeCoordinate {
   
   var xSize: Int = 0
   var ySize: Int = 0
   var tSize: Int = 0
   
+  // hash calculation based on the different dimension sizes
   def hash(x: Int, y: Int, t: Int): Int = {
     t * ySize * xSize + y * xSize + x
   }
   
+  // calculate back xyt from a hash value
   def getXYTFromHash(hash: Int, xyt: Array[Int]) {
     val t = hash / (ySize * xSize)
     val hash1 = hash - t * ySize * xSize
@@ -21,6 +27,7 @@ object SpaceTimeCoordinate {
     xyt(2) = t
   }
   
+  // generate a SpaceTimeCoordinate object from a hash value
   def getSpaceTimeCoordinateFromHash(hash: Int): SpaceTimeCoordinate = {
     val xyt: Array[Int] = Array(0, 0, 0)
     getXYTFromHash(hash, xyt)
@@ -28,6 +35,13 @@ object SpaceTimeCoordinate {
   }
 }
 
+/**
+ * 
+ * SpaceTimeCoordinate class
+ * 
+ * It represents a cell in the 3D space-time coordinate system
+ * 
+ */
 @SerialVersionUID(1L)
 class SpaceTimeCoordinate(val x: Int, val y: Int, val t: Int) extends Serializable {
     
@@ -47,6 +61,5 @@ class SpaceTimeCoordinate(val x: Int, val y: Int, val t: Int) extends Serializab
   
   override def toString(): String = {
     "SpaceTimeCoordinate(x: " + x + ",y:" + y + ",t:" + t + ")" 
-  }
-  
+  }  
 }
