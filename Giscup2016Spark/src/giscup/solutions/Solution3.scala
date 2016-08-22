@@ -18,9 +18,16 @@ import org.apache.hadoop.io.compress.GzipCodec.GzipOutputStream
 import giscup.events.EventAccumulator2
 import giscup.events.EventAccumulator3
 
+/**
+ * 
+ * Solution3
+ * 
+ * It uses EventAccumulator3 for fast and efficient event accumulation in stage-1
+ * 
+ */
 class Solution3 extends Solution {
   
-  override def run(inputFiles: String, outputFile: String, degreeParameter: Double, timeParameterInDays: Int, sc: SparkContext) {
+  override def run(inputFiles: String, outputFile: String, degreeParameter: Double, timeParameterInDays: Double, sc: SparkContext) {
     
     // open the file for parsing
     val a = sc.textFile(inputFiles)
