@@ -18,9 +18,16 @@ import org.apache.hadoop.io.compress.GzipCodec.GzipOutputStream
 import giscup.events.EventAccumulator2
 import giscup.events.EventAccumulator3
 
+/**
+ * 
+ * Solution3Stat class
+ * 
+ * It helps to find out how much of the small arrays are utilized during stage-1
+ * 
+ */
 class Solution3Stat extends Solution {
   
-  override def run(inputFiles: String, outputFile: String, degreeParameter: Double, timeParameterInDays: Int, sc: SparkContext) {
+  override def run(inputFiles: String, outputFile: String, degreeParameter: Double, timeParameterInDays: Double, sc: SparkContext) {
     
     // open the file for parsing
     val a = sc.textFile(inputFiles)
