@@ -7,8 +7,15 @@ import giscup.tools.SpaceTimeCoordinate
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import giscup.solutions.Solution
-import giscup.solutions.Solution2
+import giscup.solutions.Solution8
 
+/**
+ * 
+ * SolutionMain
+ * 
+ * Main file that runs Solution8
+ * 
+ */
 object SolutionMain {
   
   def main(args: Array[String]) = {
@@ -24,9 +31,9 @@ object SolutionMain {
     
     val degreeParameter = args(2).toDouble
     
-    val timeParameterInDays = args(3).toInt
+    val timeParameterInDays = args(3).toDouble
 
-    val solution: Solution = new Solution2()
+    val solution: Solution = new Solution8()
     
     solution.run(inputFiles, outputFile, degreeParameter, timeParameterInDays, sc)
   }
