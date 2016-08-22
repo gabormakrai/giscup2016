@@ -9,9 +9,17 @@ import giscup.tools.GetisOrdStatistic
 import giscup.tools.SpaceTimeCoordinate
 import giscup.tools.CoordinateCalculator
 
+/**
+ * 
+ * Solution2
+ * 
+ * It uses Long for the stage-1 event accumulation instead of
+ * Tuple2(SpaceTimeCoordinate,Integer)
+ * 
+ */
 class Solution2 extends Solution {
   
-  override def run(inputFiles: String, outputFile: String, degreeParameter: Double, timeParameterInDays: Int, sc: SparkContext) {
+  override def run(inputFiles: String, outputFile: String, degreeParameter: Double, timeParameterInDays: Double, sc: SparkContext) {
     
     // open the file for parsing
     val a = sc.textFile(inputFiles)
